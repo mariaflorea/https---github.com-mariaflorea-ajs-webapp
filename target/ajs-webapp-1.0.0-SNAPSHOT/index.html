@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<title>Hello AngularJS</title>
+<script src="components/angular/angular.min.js"></script>
+<script src="modules/IndexSearch/hello.js"></script>
+</head>
+
+<body>
+	<div ng-app ng-controller="customersController">
+		<div>
+			<form>
+				<input type="text" ng-model="code"> </input>
+				 <label>
+					<input type="checkbox" ng-model="authorizedOnly"> Authorized only
+				</label>
+			</form>
+		</div>
+		<table>
+			<tr>
+			<th>Code</th>
+			<th>Name</th>
+			<th>Family</th>
+			<th>Level</th>
+			</tr>
+			<tr ng-repeat="x in names">
+				<td>{{ x.Name }}</td>
+				<td>{{ x.Country }}</td>
+				<td>{{ x.City }}</td>
+				<td>{{ x.Country }}</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

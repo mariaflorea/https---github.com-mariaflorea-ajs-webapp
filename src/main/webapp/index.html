@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title>Hello AngularJS</title>
+<script src="components/angular/angular.min.js"></script>
+<script src="modules/MonsterSearch/MonsterService.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div ng-app="MonsterSearch" ng-controller="monstersController" class="bd">
+		<div>
+			<form ng-submit="submit()">
+				<input type="text" ng-model="code">
+				 <label>
+					<input type="checkbox" ng-model="authorizedOnly"> Authorized only
+				</label>
+			</form>
+		</div><br>
+		<div class="datagrid">
+			<table>
+				<thead><tr>
+				<th>Code</th>
+				<th>Name</th>
+				<th>Family</th>
+				<th>Level</th>
+				</tr></thead>
+				<tr ng-repeat="x in rows" class="alt{{x.level}}">
+					<td>{{ x.code }}</td>
+					<td>{{ x.name }}</td>
+					<td>{{ x.family }}</td>
+					<td>{{ x.level }}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>

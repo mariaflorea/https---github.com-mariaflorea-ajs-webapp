@@ -1,0 +1,6 @@
+ajs\webapp\service\WebInitializer.class
+ajs\webapp\model\MonsterResponse.class
+ajs\webapp\service\SearchController.class
+ajs\webapp\service\SearchApplication.class
+ajs\webapp\model\Monster.class
+ajs\webapp\model\Errors.class

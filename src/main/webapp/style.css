@@ -1,0 +1,40 @@
+.bd {font:normal 12px/150% Arial, Helvetica, sans-serif;background:#fff;}
+
+.datagrid
+{   
+  overflow:hidden;  
+}
+
+.datagrid table
+{
+  border-collapse:collapse;
+  text-align:left;
+  border:1px solid #991821;
+}
+
+.datagrid table td,.datagrid table th
+{
+  padding:2px 10px;
+}
+
+.datagrid table thead th
+{
+  background-color:#991821;
+  color:#FFF;
+  font-size:15px;
+  font-weight:700;
+}
+
+.datagrid table td
+{
+  color:#80141C;
+  border:1px solid #991821;
+  font-size:12px;
+  font-weight:400;
+}
+
+.datagrid table .alt1 td
+{
+  background:#F7CDCD;
+  color:#80141C;
+}
