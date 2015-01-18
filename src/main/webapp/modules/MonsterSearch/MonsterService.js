@@ -24,6 +24,4 @@ angular.module('MonsterSearch', []).controller(
 			
 			getData();
 			
-		}).config(function($locationProvider) {
-	$locationProvider.html5Mode(true).hashPrefix('!');
-});
+		});
