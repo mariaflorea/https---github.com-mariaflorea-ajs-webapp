@@ -3,7 +3,7 @@ angular.module('MonsterSearch', [])
 		function($scope, $http, $location) {
 			$scope.code = '';
 			$scope.authorizedOnly = true;
-			$scope.rows = 0;
+			$scope.totalRows = 0;
 			$scope.limit = 3;
 			var path = window.location.toString();
 			path = path.substring(0, path.lastIndexOf('/'));
