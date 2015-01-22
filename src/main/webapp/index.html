@@ -17,6 +17,7 @@
 				</label>
 			</form>
 		</div><br>
+		{{rows}}
 		<div class="datagrid">
 			<table>
 				<thead><tr>
@@ -25,12 +26,13 @@
 				<th>Family</th>
 				<th>Level</th>
 				</tr></thead>
-				<tr data-ng-repeat="x in rows" class="alt{{x.level}}">
+				<tr data-ng-repeat="x in data" class="alt{{x.level}}">
 					<td>{{ x.code }}</td>
 					<td>{{ x.name }}</td>
 					<td>{{ x.family }}</td>
 					<td>{{ x.level }}</td>
 				</tr>
+				<tr data-ng-if="!totalRows"><td colspan="4">No results.</td></tr>
 			</table>
 		</div>
 	</div>

@@ -18,16 +18,17 @@ import ajs.webapp.model.MonsterResponse;
 public class SearchController {
 
 	@RequestMapping(value = "/monsters/{user}", produces = "application/json", method = RequestMethod.GET, params = {
-			"code", "isAuthorizedOnly" })
+			"code", "isAuthorizedOnly", "limit" })
 	public ResponseEntity<MonsterResponse> getMonsters(
 			@PathVariable("user") String user,
 			@RequestParam("code") String code,
-			@RequestParam("isAuthorizedOnly") Integer isAuthorizedOnly) {
+			@RequestParam("isAuthorizedOnly") Integer isAuthorizedOnly,
+			@RequestParam("limit") Integer limit) {
 
-		return getAllMonsters();
+		return getAllMonsters(limit);
 	}
 
-	private ResponseEntity<MonsterResponse> getAllMonsters() {
+	private List<Monster> generateMonsters() {
 		Monster m1 = new Monster("code1", "Ogre", "Earth", 1);
 		Monster m2 = new Monster("code2", "Troll", "Earth", 0);
 		Monster m3 = new Monster("code3", "Hydra", "Water", 0);
@@ -43,8 +44,23 @@ public class SearchController {
 		l.add(m4);
 		l.add(m5);
 		l.add(m6);
+		l.add(m7);
 
-		MonsterResponse resp = new MonsterResponse(l, null);
+		return l;
+	}
+
+	private ResponseEntity<MonsterResponse> getAllMonsters(Integer limit) {
+
+		List<Monster> l = generateMonsters();
+
+		Integer totalRows = l.size();
+
+		if (limit > totalRows) {
+			limit = totalRows;
+		}
+
+		MonsterResponse resp = new MonsterResponse(l.subList(0, limit), null,
+				totalRows);
 
 		return new ResponseEntity<MonsterResponse>(resp, HttpStatus.OK);
 	}

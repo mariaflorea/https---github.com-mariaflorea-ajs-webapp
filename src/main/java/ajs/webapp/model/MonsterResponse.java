@@ -18,14 +18,18 @@ public class MonsterResponse implements Serializable {
 
 	private Errors errors;
 
+	private Integer totalRows;
+
 	public MonsterResponse() {
 		super();
 	}
 
-	public MonsterResponse(List<Monster> monster, Errors errors) {
+	public MonsterResponse(List<Monster> monster, Errors errors,
+			Integer totalRows) {
 		super();
 		this.monster = monster;
 		this.errors = errors;
+		this.totalRows = totalRows;
 	}
 
 	public List<Monster> getMonster() {
@@ -42,6 +46,14 @@ public class MonsterResponse implements Serializable {
 
 	public void setErrors(Errors errors) {
 		this.errors = errors;
+	}
+
+	public Integer getTotalRows() {
+		return totalRows;
+	}
+
+	public void setTotalRows(Integer totalRows) {
+		this.totalRows = totalRows;
 	}
 
 }
